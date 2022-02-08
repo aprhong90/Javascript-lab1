@@ -24,6 +24,10 @@ for (i = 0; i < lifeEvents.length; i++) {
 }
 
 let counter = 0;
+
+const hours = 50;
+const wage = 10;
+
 while (true) {
   let randomNumber = Math.floor(Math.random() * 10 + 1);
   if (randomNumber !== 5) {
@@ -36,4 +40,20 @@ while (true) {
     );
     break;
   }
+}
+
+if (hours <= 40) {
+  const pay = hours * wage;
+  const weeks = Math.floor(1000000 / pay);
+  console.log(
+    `your paycheck comes out to ${
+      hours * wage
+    }. It will take ${weeks} weeks to make $1,000,000`
+  );
+} else {
+  const pay = wage * 40 + (hours - 40) * (wage * 1.5);
+  const weeks = Math.floor(1000000 / pay);
+  console.log(
+    `your paycheck comes out to ${pay}. It will take ${weeks} weeks to make $1,000,000`
+  );
 }
